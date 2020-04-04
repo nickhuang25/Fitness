@@ -7,17 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37D1E7E924367E4C00AD49F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7E824367E4C00AD49F1 /* User.swift */; };
+		37D1E7ED243680C600AD49F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7EC243680C600AD49F1 /* DashboardViewController.swift */; };
+		37D1E7EF243687F300AD49F1 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7EE243687F300AD49F1 /* Quiz.swift */; };
+		37D1E7F124368B8800AD49F1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7F024368B8800AD49F1 /* Question.swift */; };
+		37D1E7F624368EEC00AD49F1 /* General.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D1E7F524368EEC00AD49F1 /* General.xib */; };
+		37D1E7FA24368F2500AD49F1 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7F924368F2500AD49F1 /* General.swift */; };
+		37D1E7FC2436909700AD49F1 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7FB2436909700AD49F1 /* Goal.swift */; };
+		37D1E7FE243690A800AD49F1 /* Goal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D1E7FD243690A800AD49F1 /* Goal.xib */; };
+		37D1E8002436925E00AD49F1 /* Exercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D1E7FF2436925E00AD49F1 /* Exercise.xib */; };
+		37D1E8022436927000AD49F1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E8012436927000AD49F1 /* Exercise.swift */; };
+		37D1E804243693D000AD49F1 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E803243693D000AD49F1 /* Metrics.swift */; };
+		37D1E806243693E500AD49F1 /* Metrics.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D1E805243693E500AD49F1 /* Metrics.xib */; };
 		5C12240C241369C9003E131B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C12240B241369C9003E131B /* AppDelegate.swift */; };
-		5C12240E241369C9003E131B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C12240D241369C9003E131B /* ViewController.swift */; };
+		5C12240E241369C9003E131B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C12240D241369C9003E131B /* LaunchViewController.swift */; };
 		5C122411241369C9003E131B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C12240F241369C9003E131B /* Main.storyboard */; };
 		5C122413241369CC003E131B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C122412241369CC003E131B /* Assets.xcassets */; };
 		5C122416241369CC003E131B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C122414241369CC003E131B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37D1E7E824367E4C00AD49F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		37D1E7EC243680C600AD49F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		37D1E7EE243687F300AD49F1 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		37D1E7F024368B8800AD49F1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		37D1E7F524368EEC00AD49F1 /* General.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = General.xib; sourceTree = "<group>"; };
+		37D1E7F924368F2500AD49F1 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		37D1E7FB2436909700AD49F1 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		37D1E7FD243690A800AD49F1 /* Goal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Goal.xib; sourceTree = "<group>"; };
+		37D1E7FF2436925E00AD49F1 /* Exercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Exercise.xib; sourceTree = "<group>"; };
+		37D1E8012436927000AD49F1 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		37D1E803243693D000AD49F1 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		37D1E805243693E500AD49F1 /* Metrics.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Metrics.xib; sourceTree = "<group>"; };
 		5C122408241369C9003E131B /* FitnessApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C12240B241369C9003E131B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C12240D241369C9003E131B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C12240D241369C9003E131B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		5C122410241369C9003E131B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C122412241369CC003E131B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C122415241369CC003E131B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +59,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37D1E7EA24367E5200AD49F1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				37D1E7E824367E4C00AD49F1 /* User.swift */,
+				37D1E7EE243687F300AD49F1 /* Quiz.swift */,
+				37D1E7F024368B8800AD49F1 /* Question.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		37D1E7EB24367E7100AD49F1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5C12240D241369C9003E131B /* LaunchViewController.swift */,
+				37D1E7EC243680C600AD49F1 /* DashboardViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		37D1E7F224368B9B00AD49F1 /* Slide Templates */ = {
+			isa = PBXGroup;
+			children = (
+				37D1E7F524368EEC00AD49F1 /* General.xib */,
+				37D1E7F924368F2500AD49F1 /* General.swift */,
+				37D1E7FD243690A800AD49F1 /* Goal.xib */,
+				37D1E7FB2436909700AD49F1 /* Goal.swift */,
+				37D1E7FF2436925E00AD49F1 /* Exercise.xib */,
+				37D1E8012436927000AD49F1 /* Exercise.swift */,
+				37D1E805243693E500AD49F1 /* Metrics.xib */,
+				37D1E803243693D000AD49F1 /* Metrics.swift */,
+			);
+			path = "Slide Templates";
+			sourceTree = "<group>";
+		};
 		5C1223FF241369C9003E131B = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +112,10 @@
 		5C12240A241369C9003E131B /* FitnessApp */ = {
 			isa = PBXGroup;
 			children = (
+				37D1E7F224368B9B00AD49F1 /* Slide Templates */,
+				37D1E7EB24367E7100AD49F1 /* ViewControllers */,
+				37D1E7EA24367E5200AD49F1 /* Classes */,
 				5C12240B241369C9003E131B /* AppDelegate.swift */,
-				5C12240D241369C9003E131B /* ViewController.swift */,
 				5C12240F241369C9003E131B /* Main.storyboard */,
 				5C122412241369CC003E131B /* Assets.xcassets */,
 				5C122414241369CC003E131B /* LaunchScreen.storyboard */,
@@ -123,7 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C122416241369CC003E131B /* LaunchScreen.storyboard in Resources */,
+				37D1E8002436925E00AD49F1 /* Exercise.xib in Resources */,
+				37D1E7FE243690A800AD49F1 /* Goal.xib in Resources */,
 				5C122413241369CC003E131B /* Assets.xcassets in Resources */,
+				37D1E806243693E500AD49F1 /* Metrics.xib in Resources */,
+				37D1E7F624368EEC00AD49F1 /* General.xib in Resources */,
 				5C122411241369C9003E131B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C12240E241369C9003E131B /* ViewController.swift in Sources */,
+				37D1E7FC2436909700AD49F1 /* Goal.swift in Sources */,
+				5C12240E241369C9003E131B /* LaunchViewController.swift in Sources */,
+				37D1E7EF243687F300AD49F1 /* Quiz.swift in Sources */,
 				5C12240C241369C9003E131B /* AppDelegate.swift in Sources */,
+				37D1E7F124368B8800AD49F1 /* Question.swift in Sources */,
+				37D1E7E924367E4C00AD49F1 /* User.swift in Sources */,
+				37D1E7FA24368F2500AD49F1 /* General.swift in Sources */,
+				37D1E804243693D000AD49F1 /* Metrics.swift in Sources */,
+				37D1E7ED243680C600AD49F1 /* DashboardViewController.swift in Sources */,
+				37D1E8022436927000AD49F1 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
