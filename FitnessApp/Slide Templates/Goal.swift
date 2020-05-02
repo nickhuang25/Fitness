@@ -14,6 +14,7 @@ class Goal: UIView {
     @IBOutlet weak var goalButton1: UIButton!
     @IBOutlet weak var goalButton2: UIButton!
     @IBOutlet weak var goalButton3: UIButton!
+    @IBOutlet weak var goalButton4: UIButton!
     
-
+    
 }

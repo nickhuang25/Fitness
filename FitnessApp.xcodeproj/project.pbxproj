@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3792FCA5245CBA1C0065099A /* Transition.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3792FCA4245CBA1C0065099A /* Transition.xib */; };
+		3792FCA9245CBA880065099A /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3792FCA8245CBA880065099A /* Transition.swift */; };
 		37D1E7E924367E4C00AD49F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7E824367E4C00AD49F1 /* User.swift */; };
 		37D1E7ED243680C600AD49F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7EC243680C600AD49F1 /* DashboardViewController.swift */; };
 		37D1E7EF243687F300AD49F1 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D1E7EE243687F300AD49F1 /* Quiz.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3792FCA4245CBA1C0065099A /* Transition.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Transition.xib; sourceTree = "<group>"; };
+		3792FCA8245CBA880065099A /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		37D1E7E824367E4C00AD49F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37D1E7EC243680C600AD49F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		37D1E7EE243687F300AD49F1 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				37D1E8012436927000AD49F1 /* Exercise.swift */,
 				37D1E805243693E500AD49F1 /* Metrics.xib */,
 				37D1E803243693D000AD49F1 /* Metrics.swift */,
+				3792FCA4245CBA1C0065099A /* Transition.xib */,
+				3792FCA8245CBA880065099A /* Transition.swift */,
 			);
 			path = "Slide Templates";
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 			files = (
 				5C122416241369CC003E131B /* LaunchScreen.storyboard in Resources */,
 				37D1E8002436925E00AD49F1 /* Exercise.xib in Resources */,
+				3792FCA5245CBA1C0065099A /* Transition.xib in Resources */,
 				37D1E7FE243690A800AD49F1 /* Goal.xib in Resources */,
 				5C122413241369CC003E131B /* Assets.xcassets in Resources */,
 				37D1E806243693E500AD49F1 /* Metrics.xib in Resources */,
@@ -204,6 +211,7 @@
 				37D1E7EF243687F300AD49F1 /* Quiz.swift in Sources */,
 				5C12240C241369C9003E131B /* AppDelegate.swift in Sources */,
 				37D1E7F124368B8800AD49F1 /* Question.swift in Sources */,
+				3792FCA9245CBA880065099A /* Transition.swift in Sources */,
 				37D1E7E924367E4C00AD49F1 /* User.swift in Sources */,
 				37D1E7FA24368F2500AD49F1 /* General.swift in Sources */,
 				37D1E804243693D000AD49F1 /* Metrics.swift in Sources */,

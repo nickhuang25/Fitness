@@ -21,7 +21,8 @@ class Question {
     //               Functions
     //------------------------------------------
     
-    init(){
-        
+    init(qF: [String], qT: String){
+        questionFields = qF
+        questionTemplate = qT
     }
 }
