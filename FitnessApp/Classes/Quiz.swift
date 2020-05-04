@@ -24,8 +24,8 @@ class Quiz {
     var gender: String = ""
     var activityLevel: String = ""
     var goal: String = ""
-    var sportsDict: [String:[Double]] = [:]
-    var otherExerciseDict: [String:[Double]] = [:]
+    var sportsDict: [String:[Float]] = [:]
+    var otherExerciseDict: [String:[Float]] = [:]
     var currentMuscles: [String] = []
     var futureExercise: [String] = []
     var futureMuscles: [String] = []
@@ -57,7 +57,7 @@ class Quiz {
         initialQuestionList.append(Question(qF: ["What sports do you play?", "Soccer", "Basketball", "Tennis", "Swimming", "Football", "Track and Field", "Baseball", "Gymnastics", "Volleyball", "Skating", "Dance", "Other"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["What other excercises do you do?", "Muscle Training", "HIIT", "Jogging", "Yoga", "Circuit Training", "Cardio Machine", "Cycling", "Walking", "Other"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["What do you currently train?", "Biceps", "Triceps", "Shoulders", "Chest", "Back", "Core", "Glutes", "Hamstrings", "Quads", "Calves"], qT: "exercise"))
-        initialQuestionList.append(Question(qF: ["What other excercises do you want to do?", "Muscle Training", "HIIT", "Jogging", "Yoga", "Circuit Training", "Cardio Machine", "Cycling", "Walking", "Other"], qT: "exercise"))
+        initialQuestionList.append(Question(qF: ["What other excercises do you want to do?", "Muscle Training", "HIIT", "Jogging", "Yoga", "Circuit Training", "Cardio Machine", "Cycling", "Walking"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["What do you want to train?", "Biceps", "Triceps", "Shoulders", "Chest", "Back", "Core", "Glutes", "Hamstrings", "Quads", "Calves"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["Do you have access to a gym or free weights?", "Yes", "No"], qT: "goal"))
         

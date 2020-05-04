@@ -16,7 +16,8 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
     var user = User()
     var quiz = Quiz()
     var curr_idx = 0;
-    
+    var sports_idx = 0;
+    var otherExercise_idx = 0;
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var slideImage: UIScrollView!
@@ -182,7 +183,20 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
             exercise.exerciseNext.addTarget(self, action: #selector(self.exerciseNextClicked), for: .touchUpInside)
             slideImage.addSubview(exercise)
             view.bringSubview(toFront: slideImage)
-            
+        case "metrics":
+            let metrics:Metrics = Bundle.main.loadNibNamed("Metrics", owner: self, options: nil)?.first as! Metrics
+            if(curr_question.questionFields!.count > 0){
+                metrics.sportLabel.text = curr_question.questionFields![0]
+            }else{metrics.sportLabel.isHidden = true}
+            if(curr_question.questionFields!.count > 1){
+                metrics.intensityLabel.text = curr_question.questionFields![1]
+            }else{metrics.intensityLabel.isHidden = true}
+            if(curr_question.questionFields!.count > 2){
+                metrics.durationLabel.text = curr_question.questionFields![2]
+            }else{metrics.durationLabel.isHidden = true}
+            metrics.metricNext.addTarget(self, action: #selector(self.metricsNextClicked), for: .touchUpInside)
+            slideImage.addSubview(metrics)
+            view.bringSubview(toFront: slideImage)
         default:
             print("You fucked up")
         }
@@ -250,7 +264,7 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
             else{quiz.weightAccess = false}
             print(quiz.weightAccess)
         default:
-            print("Failed on saving generalNextClicked")
+            print("Failed on saving goalNextClicked")
         }
         let curr_question = quiz.initialQuestionList[curr_idx]
         populateSlide(curr_question: curr_question)
@@ -258,15 +272,160 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
     }
     
     @objc func exerciseNextClicked(_ sender: UIButton!){
-        let curr_question = quiz.initialQuestionList[curr_idx]
-        populateSlide(curr_question: curr_question)
-        curr_idx+=1
+        let save_question = quiz.initialQuestionList[curr_idx-1]
+        let sub: UIView? = sender.superview
+        let exercise = sub as! Exercise
+        switch(save_question.questionFields![0]){
+        case "What sports do you play?":
+            if(exercise.exerciseButton1.isSelected){quiz.sportsQL.append(Question(qF: ["Soccer", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton2.isSelected){quiz.sportsQL.append(Question(qF: ["Basketball", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton3.isSelected){quiz.sportsQL.append(Question(qF: ["Tennis", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton4.isSelected){quiz.sportsQL.append(Question(qF: ["Swimming", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton5.isSelected){quiz.sportsQL.append(Question(qF: ["Football", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton6.isSelected){quiz.sportsQL.append(Question(qF: ["Track and Field", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton7.isSelected){quiz.sportsQL.append(Question(qF: ["Baseball", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton8.isSelected){quiz.sportsQL.append(Question(qF: ["Gymnastics", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton9.isSelected){quiz.sportsQL.append(Question(qF: ["Volleyball", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton10.isSelected){quiz.sportsQL.append(Question(qF: ["Skating", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton11.isSelected){quiz.sportsQL.append(Question(qF: ["Dance", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton12.isSelected){quiz.sportsQL.append(Question(qF: ["Other", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(quiz.sportsQL.count > 0){
+                let first_sports_q = quiz.sportsQL[0]
+                populateSlide(curr_question: first_sports_q)
+                sports_idx+=1
+            }
+            else{
+                let curr_question = quiz.initialQuestionList[curr_idx]
+                populateSlide(curr_question: curr_question)
+                sports_idx+=1
+                curr_idx+=1
+            }
+        case "What other excercises do you do?":
+            if(exercise.exerciseButton1.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Muscle Training", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton1.isSelected == false){curr_idx+=1}
+            if(exercise.exerciseButton2.isSelected){quiz.otherExerciseQL.append(Question(qF: ["HIIT", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton3.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Jogging", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton4.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Yoga", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton5.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Circuit Training", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton6.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Cardio Machine", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton7.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Cycling", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton8.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Walking", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(exercise.exerciseButton9.isSelected){quiz.otherExerciseQL.append(Question(qF: ["Other", "Intensity", "Hours/Week"], qT: "metrics"))}
+            if(quiz.otherExerciseQL.count > 0){
+                let first_exercise_q = quiz.otherExerciseQL[0]
+                populateSlide(curr_question: first_exercise_q)
+                otherExercise_idx+=1
+            }
+            else{
+                let curr_question = quiz.initialQuestionList[curr_idx]
+                populateSlide(curr_question: curr_question)
+                curr_idx+=1
+            }
+        case "What do you currently train?":
+            if(exercise.exerciseButton1.isSelected){quiz.currentMuscles.append("Biceps")}
+            if(exercise.exerciseButton2.isSelected){quiz.currentMuscles.append("Triceps")}
+            if(exercise.exerciseButton3.isSelected){quiz.currentMuscles.append("Shoulders")}
+            if(exercise.exerciseButton4.isSelected){quiz.currentMuscles.append("Chest")}
+            if(exercise.exerciseButton5.isSelected){quiz.currentMuscles.append("Back")}
+            if(exercise.exerciseButton6.isSelected){quiz.currentMuscles.append("Core")}
+            if(exercise.exerciseButton7.isSelected){quiz.currentMuscles.append("Glutes")}
+            if(exercise.exerciseButton8.isSelected){quiz.currentMuscles.append("Hamstrings")}
+            if(exercise.exerciseButton9.isSelected){quiz.currentMuscles.append("Quads")}
+            if(exercise.exerciseButton10.isSelected){quiz.currentMuscles.append("Calves")}
+            let curr_question = quiz.initialQuestionList[curr_idx]
+            populateSlide(curr_question: curr_question)
+            curr_idx+=1
+            print(quiz.currentMuscles)
+        case "What other excercises do you want to do?":
+            if(exercise.exerciseButton1.isSelected){quiz.futureExercise.append("Muscle Training")}
+            if(exercise.exerciseButton2.isSelected){quiz.futureExercise.append("HIIT")}
+            if(exercise.exerciseButton3.isSelected){quiz.futureExercise.append("Jogging")}
+            if(exercise.exerciseButton4.isSelected){quiz.futureExercise.append("Yoga")}
+            if(exercise.exerciseButton5.isSelected){quiz.futureExercise.append("Circuit Training")}
+            if(exercise.exerciseButton6.isSelected){quiz.futureExercise.append("Cardio Machine")}
+            if(exercise.exerciseButton7.isSelected){quiz.futureExercise.append("Cycling")}
+            if(exercise.exerciseButton8.isSelected){quiz.futureExercise.append("Walking")}
+            let curr_question = quiz.initialQuestionList[curr_idx]
+            populateSlide(curr_question: curr_question)
+            curr_idx+=1
+            print(quiz.futureExercise)
+        case "What do you want to train?":
+            if(exercise.exerciseButton1.isSelected){quiz.futureMuscles.append("Biceps")}
+            if(exercise.exerciseButton2.isSelected){quiz.futureMuscles.append("Triceps")}
+            if(exercise.exerciseButton3.isSelected){quiz.futureMuscles.append("Shoulders")}
+            if(exercise.exerciseButton4.isSelected){quiz.futureMuscles.append("Chest")}
+            if(exercise.exerciseButton5.isSelected){quiz.futureMuscles.append("Back")}
+            if(exercise.exerciseButton6.isSelected){quiz.futureMuscles.append("Core")}
+            if(exercise.exerciseButton7.isSelected){quiz.futureMuscles.append("Glutes")}
+            if(exercise.exerciseButton8.isSelected){quiz.futureMuscles.append("Hamstrings")}
+            if(exercise.exerciseButton9.isSelected){quiz.futureMuscles.append("Quads")}
+            if(exercise.exerciseButton10.isSelected){quiz.futureMuscles.append("Calves")}
+            let curr_question = quiz.initialQuestionList[curr_idx]
+            populateSlide(curr_question: curr_question)
+            curr_idx+=1
+            print(quiz.futureMuscles)
+        default:
+            print("Failed on saving exerciseNextClicked")
+        }
     }
     
     @objc func metricsNextClicked(_ sender: UIButton!){
-        let curr_question = quiz.initialQuestionList[curr_idx]
-        populateSlide(curr_question: curr_question)
-        curr_idx+=1
+        if(sports_idx == quiz.sportsQL.count){
+            let save_question = quiz.sportsQL[sports_idx-1]
+            let sub: UIView? = sender.superview
+            let metrics = sub as! Metrics
+            let intensity = metrics.intensitySlider.value
+            let duration = metrics.durationSlider.value
+            quiz.sportsDict[save_question.questionFields![0]] = [intensity, duration]
+            //REMOVE
+            print(save_question.questionFields![0])
+            print(quiz.sportsDict[save_question.questionFields![0]]!)
+            //REMOVE
+            sports_idx+=1
+            let curr_question = quiz.initialQuestionList[curr_idx]
+            populateSlide(curr_question: curr_question)
+            curr_idx+=1
+        }
+        else if(sports_idx < quiz.sportsQL.count){
+            let save_question = quiz.sportsQL[sports_idx-1]
+            let sub: UIView? = sender.superview
+            let metrics = sub as! Metrics
+            let intensity = metrics.intensitySlider.value
+            let duration = metrics.durationSlider.value
+            quiz.sportsDict[save_question.questionFields![0]] = [intensity, duration]
+            //REMOVE
+            print(save_question.questionFields![0])
+            print(quiz.sportsDict[save_question.questionFields![0]]!)
+            //REMOVE
+            let sports_question = quiz.sportsQL[sports_idx]
+            populateSlide(curr_question: sports_question)
+            sports_idx+=1
+        }
+        else{
+            let save_question = quiz.otherExerciseQL[otherExercise_idx-1]
+            let sub: UIView? = sender.superview
+            let metrics = sub as! Metrics
+            let intensity = metrics.intensitySlider.value
+            let duration = metrics.durationSlider.value
+            quiz.otherExerciseDict[save_question.questionFields![0]] = [intensity, duration]
+            //REMOVE
+            print(save_question.questionFields![0])
+            print(quiz.otherExerciseDict[save_question.questionFields![0]]!)
+            //REMOVE
+            if(otherExercise_idx == quiz.otherExerciseQL.count){
+                otherExercise_idx+=1;
+                let curr_question = quiz.initialQuestionList[curr_idx]
+                populateSlide(curr_question: curr_question)
+                curr_idx+=1
+            }
+            else{
+                let otherEx_question = quiz.otherExerciseQL[otherExercise_idx]
+                populateSlide(curr_question: otherEx_question)
+                otherExercise_idx+=1
+            }
+        }
+
+        
     }
     
     @objc func transitionNextClicked(_ sender: UIButton!){
