@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,10 +14,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWP-iG-CDB">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWP-iG-CDB">
                     <rect key="frame" x="81" y="98" width="252" height="65"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -81,14 +81,19 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6B-T2-nsZ">
+                    <rect key="frame" x="192" y="686" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="&gt;&gt;"/>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="exerciseButton1" destination="QeY-L5-BTc" id="hoO-Ll-mFI"/>
                 <outlet property="exerciseButton10" destination="7hH-aR-Rm1" id="I84-tR-y9C"/>
-                <outlet property="exerciseButton11" destination="142-ft-1gX" id="6xP-WL-cBe"/>
-                <outlet property="exerciseButton12" destination="142-ft-1gX" id="OzL-vI-2K4"/>
+                <outlet property="exerciseButton11" destination="xUr-u2-cQJ" id="43M-XV-Aiu"/>
+                <outlet property="exerciseButton12" destination="142-ft-1gX" id="ngl-Fz-Az4"/>
                 <outlet property="exerciseButton2" destination="nTZ-rh-ddp" id="CgO-fl-xbE"/>
                 <outlet property="exerciseButton3" destination="iLw-Xb-BJC" id="1sr-VK-fiU"/>
                 <outlet property="exerciseButton4" destination="IuL-Qi-XQY" id="prO-dZ-ggH"/>
@@ -98,6 +103,7 @@
                 <outlet property="exerciseButton8" destination="k3h-YU-eIz" id="fFB-qF-TOz"/>
                 <outlet property="exerciseButton9" destination="pZJ-c6-LD2" id="Q2c-pa-baw"/>
                 <outlet property="exerciseLabel" destination="lWP-iG-CDB" id="rnc-O5-0GI"/>
+                <outlet property="exerciseNext" destination="U6B-T2-nsZ" id="oDU-hm-TUF"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
         </view>

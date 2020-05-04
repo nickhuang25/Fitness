@@ -10,4 +10,6 @@ import UIKit
 
 class Transition: UIView {
     @IBOutlet weak var transitionLabel: UILabel!
+    @IBOutlet weak var transitionNext: UIButton!
+    
 }

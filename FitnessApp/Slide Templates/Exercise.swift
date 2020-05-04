@@ -23,6 +23,7 @@ class Exercise: UIView {
     @IBOutlet weak var exerciseButton10: UIButton!
     @IBOutlet weak var exerciseButton11: UIButton!
     @IBOutlet weak var exerciseButton12: UIButton!
+    @IBOutlet weak var exerciseNext: UIButton!
     
 
 }

@@ -12,5 +12,6 @@ class General: UIView {
 
     @IBOutlet weak var generalLabel: UILabel!
     @IBOutlet weak var generalTextField: UITextField!
+    @IBOutlet weak var generalNext: UIButton!
     
 }
