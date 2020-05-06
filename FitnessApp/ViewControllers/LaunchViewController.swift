@@ -444,6 +444,5 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
         
         
     }
-    
 
 }

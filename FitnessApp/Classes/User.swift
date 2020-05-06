@@ -13,7 +13,13 @@ class User {
     //               Variables
     //------------------------------------------
     
-    var name: String?
+    var name: String = ""
+    var startDate: Date?
+    var workoutPlan: [[String]] = [[]]
+    var dietPlan: [[String]] = [[]]
+    var motivation: [String] = []
+    
+    
     
     
     
