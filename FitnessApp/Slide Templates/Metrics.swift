@@ -15,6 +15,7 @@ class Metrics: UIView {
     @IBOutlet weak var intensitySlider: UISlider!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var durationSlider: UISlider!
+    @IBOutlet weak var durationValue: UILabel!
     @IBOutlet weak var metricNext: UIButton!
     
 }

@@ -13,7 +13,8 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
     //------------------------------------------
     //         Variables
     //------------------------------------------
-    var user = User()
+    var firstLaunch: Bool = true
+    var user: User?
     var quiz = Quiz()
     var curr_idx = 0;
     var sports_idx = 0;
@@ -56,12 +57,14 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func nextStep(){
-        if(isAppAlreadyLaunchedOnce() == false){
+        firstLaunch = isAppAlreadyLaunchedOnce()
+        if(firstLaunch == false){
             print("LAUNCH QUIZ")
             takeQuiz()
         }
         else{
             print("RETRIEVE USER OBJECT")
+            user = loadUserData()
             print("USER OBJECT RETRIEVED")
             performSegue(withIdentifier: "LaunchToDashboard", sender: self)
         }
@@ -78,6 +81,26 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
         }
 
     }
+    
+    
+    //------------------------------------------
+    //         User Data Functions
+    //------------------------------------------
+    
+    private func saveUserData(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(user as Any, toFile: User.ArchiveURL.path)
+        if(isSuccessfulSave){
+            print("User data successfully saved")
+        }
+        else{
+            print("Failed to save user data")
+        }
+    }
+    
+    private func loadUserData() -> User{
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: User.ArchiveURL.path) as? User)!
+    }
+    
     
     //------------------------------------------
     //         Quiz Functions
@@ -194,6 +217,7 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
             if(curr_question.questionFields!.count > 2){
                 metrics.durationLabel.text = curr_question.questionFields![2]
             }else{metrics.durationLabel.isHidden = true}
+            metrics.durationSlider.addTarget(self, action: #selector(self.durationSliderChanged), for: .allTouchEvents)
             metrics.metricNext.addTarget(self, action: #selector(self.metricsNextClicked), for: .touchUpInside)
             slideImage.addSubview(metrics)
             view.bringSubview(toFront: slideImage)
@@ -210,6 +234,13 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
         else{
             sender.isSelected = true
         }
+    }
+    
+    @objc func durationSliderChanged(_ sender: UISlider!){
+        print("Slider Value Updated")
+        let sub: UIView? = sender.superview
+        let metrics = sub as! Metrics
+        metrics.durationValue.text = "\(Int(round(metrics.durationSlider.value)))"
     }
     
     @objc func generalNextClicked(_ sender: UIButton!){
@@ -254,7 +285,7 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
             else{quiz.activityLevel = "Very Active"}
             print(quiz.activityLevel)
         case "What can AIM help you with?":
-            if(goal.goalButton1.isSelected){quiz.goal = "Weightloss"}
+            if(goal.goalButton1.isSelected){quiz.goal = "Weight Loss"}
             else if(goal.goalButton2.isSelected){quiz.goal = "Bulking"}
             else if(goal.goalButton3.isSelected){quiz.goal = "Leaning"}
             else{quiz.goal = "Feel Good!"}
@@ -441,8 +472,9 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func calcAlgorithm(){
-        
-        
+        let today = Date()
+        user = User(name: quiz.name, startDate: today, workoutPlan: [["Archery"]], dietPlan: [["Grass"]], motivation: ["You have failed this city"])
+        saveUserData()
     }
 
 }

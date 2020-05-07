@@ -16,6 +16,8 @@ class DashboardViewController: UIViewController {
     var user: User?
     
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var nameTest: UILabel!
+    
     
     
     //------------------------------------------
@@ -24,6 +26,7 @@ class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTest.text = user?.name
 
         // Do any additional setup after loading the view.
     }

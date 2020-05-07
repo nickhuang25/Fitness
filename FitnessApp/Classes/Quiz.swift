@@ -53,7 +53,7 @@ class Quiz {
         
         initialQuestionList.append(Question(qF: ["Awesome! Now we want to learn about your activity!"], qT: "transition"))
         initialQuestionList.append(Question(qF: ["How would you describe your activity level?", "Sedentary", "Lightly Active", "Active", "Very Active"], qT: "goal"))
-        initialQuestionList.append(Question(qF: ["What can AIM help you with?", "Weightloss", "Bulking", "Leaning", "Feel Good!"], qT: "goal"))
+        initialQuestionList.append(Question(qF: ["What can AIM help you with?", "Weight Loss", "Bulking", "Leaning", "Feel Good!"], qT: "goal"))
         initialQuestionList.append(Question(qF: ["What sports do you play?", "Soccer", "Basketball", "Tennis", "Swimming", "Football", "Track and Field", "Baseball", "Gymnastics", "Volleyball", "Skating", "Dance", "Other"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["What other excercises do you do?", "Muscle Training", "HIIT", "Jogging", "Yoga", "Circuit Training", "Cardio Machine", "Cycling", "Walking", "Other"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["What do you currently train?", "Biceps", "Triceps", "Shoulders", "Chest", "Back", "Core", "Glutes", "Hamstrings", "Quads", "Calves"], qT: "exercise"))
