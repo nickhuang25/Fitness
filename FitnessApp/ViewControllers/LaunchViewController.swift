@@ -6,9 +6,11 @@
 //  Copyright © 2020 Alice Ying. All rights reserved.
 //
 
+
+
 import UIKit
 
-class LaunchViewController: UIViewController, UIScrollViewDelegate{
+class LaunchViewController: UIViewController, UIScrollViewDelegate {
     
     //------------------------------------------
     //         Variables
@@ -117,6 +119,7 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
         case "transition":
             let transition:Transition = Bundle.main.loadNibNamed("Transition", owner: self, options: nil)?.first as! Transition
             transition.transitionLabel.text = curr_question.questionFields![0]
+            transition.transitionContent.text = curr_question.questionFields![1]
             transition.transitionNext.addTarget(self, action: #selector(self.transitionNextClicked), for: .touchUpInside)
             slideImage.addSubview(transition)
             view.bringSubview(toFront: slideImage)
@@ -128,24 +131,29 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
             view.bringSubview(toFront: slideImage)
         case "goal":
             let goal:Goal = Bundle.main.loadNibNamed("Goal", owner: self, options: nil)?.first as! Goal
+            let light = UIColor(hex: "9ddde2")
             if(curr_question.questionFields!.count > 0){
                 goal.goalLabel.text = curr_question.questionFields![0]
             }else{goal.goalLabel.isHidden = true}
             if(curr_question.questionFields!.count > 1){
                 goal.goalButton1.setTitle(curr_question.questionFields![1], for: .normal)
-                goal.goalButton1.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                goal.goalButton1.layer.cornerRadius = 5.0
+                goal.goalButton1.addTarget(self, action: #selector(self.grow), for: .touchUpInside)
             }else{goal.goalButton1.isHidden = true}
             if(curr_question.questionFields!.count > 2){
                 goal.goalButton2.setTitle(curr_question.questionFields![2], for: .normal)
-                goal.goalButton2.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                goal.goalButton2.layer.cornerRadius = 5.0
+                goal.goalButton2.addTarget(self, action: #selector(self.grow), for: .touchUpInside)
             }else{goal.goalButton2.isHidden = true}
             if(curr_question.questionFields!.count > 3){
                 goal.goalButton3.setTitle(curr_question.questionFields![3], for: .normal)
-                goal.goalButton3.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                goal.goalButton3.layer.cornerRadius = 5.0
+                goal.goalButton3.addTarget(self, action: #selector(self.grow), for: .touchUpInside)
             }else{goal.goalButton3.isHidden = true}
             if(curr_question.questionFields!.count > 4){
                 goal.goalButton4.setTitle(curr_question.questionFields![4], for: .normal)
-                goal.goalButton4.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                goal.goalButton4.layer.cornerRadius = 5.0
+                goal.goalButton4.addTarget(self, action: #selector(self.grow), for: .touchUpInside)
             }else{goal.goalButton4.isHidden = true}
             goal.goalNext.addTarget(self, action: #selector(self.goalNextClicked), for: .touchUpInside)
             slideImage.addSubview(goal)
@@ -232,6 +240,18 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
             sender.isSelected = false
         }
         else{
+            sender.isSelected = true
+        }
+    }
+    
+    @objc func grow(_ sender: UIButton!){
+        print("GROWN")
+        if(sender.isSelected){
+            sender.frame = CGRect(x: sender.frame.origin.x, y: sender.frame.origin.y, width: 300, height: 90)
+            sender.isSelected = false
+        }
+        else{
+            sender.frame = CGRect(x: sender.frame.origin.x, y: sender.frame.origin.y, width: 350, height: 90)
             sender.isSelected = true
         }
     }
@@ -477,4 +497,32 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate{
         saveUserData()
     }
 
+}
+
+extension UIColor {
+    public convenience init?(hex: String) {
+        let r, g, b, a: CGFloat
+
+        if hex.hasPrefix("#") {
+            let start = hex.index(hex.startIndex, offsetBy: 1)
+            let hexColor = String(hex[start...])
+
+            if hexColor.count == 8 {
+                let scanner = Scanner(string: hexColor)
+                var hexNumber: UInt64 = 0
+
+                if scanner.scanHexInt64(&hexNumber) {
+                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000ff) / 255
+
+                    self.init(red: r, green: g, blue: b, alpha: a)
+                    return
+                }
+            }
+        }
+
+        return nil
+    }
 }

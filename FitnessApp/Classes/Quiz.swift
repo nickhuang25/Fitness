@@ -44,14 +44,14 @@ class Quiz {
     }
     
     func createInitialQuestionList(){
-        initialQuestionList.append(Question(qF: ["Hi there! Welcome to AIM! We're excited to help you reach all of your fitness goals. Let's start by telling us about yourself :)"], qT: "transition"))
+        initialQuestionList.append(Question(qF: ["Welcome to AIM!", "We're excited to help you reach all of your fitness goals. Let's start by telling us about yourself."], qT: "transition"))
         initialQuestionList.append(Question(qF: ["For starters, what's your name?"], qT: "general"))
         initialQuestionList.append(Question(qF: ["It's nice to meet you! How tall are you? (in)"], qT: "general"))
         initialQuestionList.append(Question(qF: ["How much do you weigh? (lbs)"], qT: "general"))
         initialQuestionList.append(Question(qF: ["How old are you?"], qT: "general"))
         initialQuestionList.append(Question(qF: ["Which of the following best describes you?", "Male", "Female", "Other"], qT: "goal"))
         
-        initialQuestionList.append(Question(qF: ["Awesome! Now we want to learn about your activity!"], qT: "transition"))
+        initialQuestionList.append(Question(qF: ["Awesome!", "Now we want to learn about your activity!"], qT: "transition"))
         initialQuestionList.append(Question(qF: ["How would you describe your activity level?", "Sedentary", "Lightly Active", "Active", "Very Active"], qT: "goal"))
         initialQuestionList.append(Question(qF: ["What can AIM help you with?", "Weight Loss", "Bulking", "Leaning", "Feel Good!"], qT: "goal"))
         initialQuestionList.append(Question(qF: ["What sports do you play?", "Soccer", "Basketball", "Tennis", "Swimming", "Football", "Track and Field", "Baseball", "Gymnastics", "Volleyball", "Skating", "Dance", "Other"], qT: "exercise"))
@@ -61,6 +61,6 @@ class Quiz {
         initialQuestionList.append(Question(qF: ["What do you want to train?", "Biceps", "Triceps", "Shoulders", "Chest", "Back", "Core", "Glutes", "Hamstrings", "Quads", "Calves"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["Do you have access to a gym or free weights?", "Yes", "No"], qT: "goal"))
         
-        initialQuestionList.append(Question(qF: ["Thanks for all the information! We've calculated a workout plan for you for the next month to help you reach your goals :) Let's check out your dashboard together"], qT: "transition"))
+        initialQuestionList.append(Question(qF: ["Thanks for all the information!", "We've calculated a workout plan for you for the next month to help you reach your goals. Let's check out your dashboard together!"], qT: "transition"))
     }
 }

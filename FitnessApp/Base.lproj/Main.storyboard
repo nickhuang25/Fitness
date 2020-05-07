@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" red="0.14344329289999999" green="0.48895492239999999" blue="0.55456606220000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Atn-zI-8Nv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="775"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="51Q-Re-EuV"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="ucc-69-Iy6"/>
