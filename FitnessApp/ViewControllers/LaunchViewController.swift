@@ -131,7 +131,6 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate {
             view.bringSubview(toFront: slideImage)
         case "goal":
             let goal:Goal = Bundle.main.loadNibNamed("Goal", owner: self, options: nil)?.first as! Goal
-            let light = UIColor(hex: "9ddde2")
             if(curr_question.questionFields!.count > 0){
                 goal.goalLabel.text = curr_question.questionFields![0]
             }else{goal.goalLabel.isHidden = true}
@@ -164,52 +163,52 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate {
                 exercise.exerciseLabel.text = curr_question.questionFields![0]
             }else{exercise.exerciseLabel.isHidden = true}
             if(curr_question.questionFields!.count > 1){
-                exercise.exerciseButton1.setTitle(curr_question.questionFields![1], for: .normal)
-                exercise.exerciseButton1.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton1.setImage(UIImage(named: curr_question.questionFields![1]), for: .normal)
+                exercise.exerciseButton1.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton1.isHidden = true}
             if(curr_question.questionFields!.count > 2){
-                exercise.exerciseButton2.setTitle(curr_question.questionFields![2], for: .normal)
-                exercise.exerciseButton2.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton2.setImage(UIImage(named: curr_question.questionFields![2]), for: .normal)
+                exercise.exerciseButton2.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton2.isHidden = true}
             if(curr_question.questionFields!.count > 3){
-                exercise.exerciseButton3.setTitle(curr_question.questionFields![3], for: .normal)
-                exercise.exerciseButton3.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton3.setImage(UIImage(named: curr_question.questionFields![3]), for: .normal)
+                exercise.exerciseButton3.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton3.isHidden = true}
             if(curr_question.questionFields!.count > 4){
-                exercise.exerciseButton4.setTitle(curr_question.questionFields![4], for: .normal)
-                exercise.exerciseButton4.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton4.setImage(UIImage(named: curr_question.questionFields![4]), for: .normal)
+                exercise.exerciseButton4.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton4.isHidden = true}
             if(curr_question.questionFields!.count > 5){
-                exercise.exerciseButton5.setTitle(curr_question.questionFields![5], for: .normal)
-                exercise.exerciseButton5.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton5.setImage(UIImage(named: curr_question.questionFields![5]), for: .normal)
+                exercise.exerciseButton5.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton5.isHidden = true}
             if(curr_question.questionFields!.count > 6){
-                exercise.exerciseButton6.setTitle(curr_question.questionFields![6], for: .normal)
-                exercise.exerciseButton6.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton6.setImage(UIImage(named: curr_question.questionFields![6]), for: .normal)
+                exercise.exerciseButton6.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton6.isHidden = true}
             if(curr_question.questionFields!.count > 7){
-                exercise.exerciseButton7.setTitle(curr_question.questionFields![7], for: .normal)
-                exercise.exerciseButton7.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton7.setImage(UIImage(named: curr_question.questionFields![7]), for: .normal)
+                exercise.exerciseButton7.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton7.isHidden = true}
             if(curr_question.questionFields!.count > 8){
-                exercise.exerciseButton8.setTitle(curr_question.questionFields![8], for: .normal)
-                exercise.exerciseButton8.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton8.setImage(UIImage(named: curr_question.questionFields![8]), for: .normal)
+                exercise.exerciseButton8.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton8.isHidden = true}
             if(curr_question.questionFields!.count > 9){
-                exercise.exerciseButton9.setTitle(curr_question.questionFields![9], for: .normal)
-                exercise.exerciseButton9.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton9.setImage(UIImage(named: curr_question.questionFields![9]), for: .normal)
+                exercise.exerciseButton9.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton9.isHidden = true}
             if(curr_question.questionFields!.count > 10){
-                exercise.exerciseButton10.setTitle(curr_question.questionFields![10], for: .normal)
-                exercise.exerciseButton10.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton10.setImage(UIImage(named: curr_question.questionFields![10]), for: .normal)
+                exercise.exerciseButton10.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton10.isHidden = true}
             if(curr_question.questionFields!.count > 11){
-                exercise.exerciseButton11.setTitle(curr_question.questionFields![11], for: .normal)
-                exercise.exerciseButton11.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton11.setImage(UIImage(named: curr_question.questionFields![11]), for: .normal)
+                exercise.exerciseButton11.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton11.isHidden = true}
             if(curr_question.questionFields!.count > 12){
-                exercise.exerciseButton12.setTitle(curr_question.questionFields![12], for: .normal)
-                exercise.exerciseButton12.addTarget(self, action: #selector(self.darken), for: .touchUpInside)
+                exercise.exerciseButton12.setImage(UIImage(named: curr_question.questionFields![12]), for: .normal)
+                exercise.exerciseButton12.addTarget(self, action: #selector(self.flip), for: .touchUpInside)
             }else{exercise.exerciseButton12.isHidden = true}
             exercise.exerciseNext.addTarget(self, action: #selector(self.exerciseNextClicked), for: .touchUpInside)
             slideImage.addSubview(exercise)
@@ -235,6 +234,16 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func darken(_ sender: UIButton!){
+        print("DARKENED")
+        if(sender.isSelected){
+            sender.isSelected = false
+        }
+        else{
+            sender.isSelected = true
+        }
+    }
+    
+    @objc func flip(_ sender: UIButton!){
         print("DARKENED")
         if(sender.isSelected){
             sender.isSelected = false
@@ -492,37 +501,141 @@ class LaunchViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func calcAlgorithm(){
+        // Variables
+        var calorieConsumption: Float = 0.0
+        var actLevel: Float = 0.0
+        var physicalAct: Float = 0.0
+        var totalDuration: Float = 0
+        var calorieGoal: Float?
+        var upperAbility: String = "beginner"
+        var lowerAbility: String = "beginner"
+        var cardioHealth: String?
+       
+        let weight: Float = (quiz.weight as NSString).floatValue / 2.2046
+        let height: Float = (quiz.height as NSString).floatValue * 2.54
+        let age: Float = (quiz.age as NSString).floatValue
+   
+        // Calculates total calorie expenditure
+        // BMR
+        if(quiz.gender == "Male" || quiz.gender == "Other"){
+            calorieConsumption += 66.47
+            calorieConsumption += (13.75 * weight)
+            calorieConsumption += (5.003 * height)
+            calorieConsumption -= (6.755 * age)
+        }
+        else if(quiz.gender == "Female" || quiz.gender == "Other"){
+            calorieConsumption += 655.1
+            calorieConsumption += (9.563 * weight)
+            calorieConsumption += (1.85 * height)
+            calorieConsumption -= (4.676 * age)
+        }
+        else{
+            calorieConsumption /= 2
+        }
+    
+       
+        print("BMR: ", calorieConsumption)
+   
+        // Non-Exercise
+        if(quiz.activityLevel == "Sedentary"){
+            actLevel = calorieConsumption * 1.2
+        }
+        else if(quiz.activityLevel == "Lightly Active"){
+            actLevel = calorieConsumption * 1.375
+        }
+        else if(quiz.activityLevel == "Active"){
+             actLevel = calorieConsumption * 1.55
+        }
+        else{
+            actLevel = calorieConsumption * 1.725
+        }
+   
+        print("Activity Level", actLevel)
+ 
+        // Physical Activity
+        var sportsRatios: [String:[Float]] = [:]
+        sportsRatios["Soccer"] = [3.18, 4.54]
+        sportsRatios["Basketball"] = [2.04, 3.62]
+        sportsRatios["Tennis"] = [2.72, 3.63]
+        sportsRatios["Swimming"] = [3.17, 4.54]
+        sportsRatios["Football"] = [3.63, 4.08]
+        sportsRatios["Track and Field"] = [3.63, 4.54]
+        sportsRatios["Baseball"] = [2.23, 2.23]
+        sportsRatios["Gymnastics"] = [1.82, 1.82]
+        sportsRatios["Volleyball"] = [1.36, 3.63]
+        sportsRatios["Skating"] = [2.5, 4.08]
+        sportsRatios["Dance"] = [1.42, 3.71]
+        sportsRatios["Other"] = [2.52, 4.04]
+       
+        var otherRatios: [String:[Float]] = [:]
+        otherRatios["Muscle Training"] = [1.36, 2.72]
+        otherRatios["HIIT"] = [3.69, 4.62]
+        otherRatios["Jogging"] = [3.63, 4.54]
+        otherRatios["Yoga"] = [1.14, 1.82]
+        otherRatios["Circuit Training"] = [1.92, 3.63]
+        otherRatios["Cardio Machine"] = [1.68, 4.62]
+        otherRatios["Cycling"] = [2.5, 4.77]
+        otherRatios["Walking"] = [1.14, 2.69]
+        otherRatios["Other"] = [2.2, 3.54]
+       
+        for (sport, sportMetrics) in quiz.sportsDict{
+            let low: Float = sportsRatios[sport]![0]
+            let high: Float = sportsRatios[sport]![1]
+            physicalAct += ((low + (high - low) * sportMetrics[0]) * weight * round(sportMetrics[1]) / 7)
+            totalDuration += sportMetrics[1]
+            if(sport == "Football" || sport == "Gymnastics" || sport == "Swimming"){
+                upperAbility = "advanced"
+            }
+            if(sport == "Soccer" || sport == "Basketball" || sport == "Track and Field" || sport == "Volleyball" ||  sport == "Skating"){
+                lowerAbility = "advanced"
+            }
+        }
+       
+        for (otherExercise, otherMetrics) in quiz.otherExerciseDict{
+            let low: Float = otherRatios[otherExercise]![0]
+            let high: Float = otherRatios[otherExercise]![1]
+            physicalAct += ((low + (high - low) * otherMetrics[0]) * weight * round(otherMetrics[1]) / 7)
+            totalDuration += otherMetrics[1]
+            if(otherExercise == "Muscle Training" || otherExercise == "HITT"){
+                upperAbility = "advanced"
+                lowerAbility = "advanced"
+            }
+        }
+       
+        print("Physical Activity: ", physicalAct)
+       
+        calorieConsumption += ((actLevel + physicalAct) / 2)
+       
+        print("Calorie Consumption: ", calorieConsumption)
+       
+        // Calculate goal calories
+        if(quiz.goal == "Weight Loss" || quiz.goal == "Leaning"){
+            calorieGoal = calorieConsumption * 0.9
+        }
+        else if(quiz.goal == "Bulking"){
+            calorieGoal = calorieConsumption + 500
+        }
+        else{
+            calorieGoal = calorieConsumption
+        }
+  
+        // Determine cardio level
+        if(totalDuration >= 0 && totalDuration <= 2){
+            cardioHealth = "beginner"
+        }
+        else if(totalDuration > 2 && totalDuration <= 4){
+            cardioHealth = "intermediate"
+        }
+         else{
+            cardioHealth = "advanced"
+        }
+   
+        print("Goal:", calorieGoal!)
+        
         let today = Date()
         user = User(name: quiz.name, startDate: today, workoutPlan: [["Archery"]], dietPlan: [["Grass"]], motivation: ["You have failed this city"])
         saveUserData()
     }
-
 }
 
-extension UIColor {
-    public convenience init?(hex: String) {
-        let r, g, b, a: CGFloat
 
-        if hex.hasPrefix("#") {
-            let start = hex.index(hex.startIndex, offsetBy: 1)
-            let hexColor = String(hex[start...])
-
-            if hexColor.count == 8 {
-                let scanner = Scanner(string: hexColor)
-                var hexNumber: UInt64 = 0
-
-                if scanner.scanHexInt64(&hexNumber) {
-                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
-                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
-                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
-                    a = CGFloat(hexNumber & 0x000000ff) / 255
-
-                    self.init(red: r, green: g, blue: b, alpha: a)
-                    return
-                }
-            }
-        }
-
-        return nil
-    }
-}

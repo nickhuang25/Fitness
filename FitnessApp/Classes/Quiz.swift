@@ -61,6 +61,6 @@ class Quiz {
         initialQuestionList.append(Question(qF: ["What do you want to train?", "Biceps", "Triceps", "Shoulders", "Chest", "Back", "Core", "Glutes", "Hamstrings", "Quads", "Calves"], qT: "exercise"))
         initialQuestionList.append(Question(qF: ["Do you have access to a gym or free weights?", "Yes", "No"], qT: "goal"))
         
-        initialQuestionList.append(Question(qF: ["Thanks for all the information!", "We've calculated a workout plan for you for the next month to help you reach your goals. Let's check out your dashboard together!"], qT: "transition"))
+        initialQuestionList.append(Question(qF: ["Thanks for the info!", "We've calculated a workout plan for you for the next month to help you reach your goals. Let's check out your dashboard together!"], qT: "transition"))
     }
 }
